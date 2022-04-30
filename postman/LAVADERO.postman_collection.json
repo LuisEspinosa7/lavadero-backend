@@ -1,0 +1,1552 @@
+{
+	"info": {
+		"_postman_id": "9b6dbed2-6f14-4ded-ad49-a3caebb57754",
+		"name": "LAVADERO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "seguridad",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\":\"themakersbrillanty@gmail.com\",\r\n\t\"password\":\"12345678\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/api/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwMzUxMDQxfQ.H7Lt-kZurmlIgyMJae2AFsNqgkerRRmI48_DsaRksW6JyYjy12b2g0USVGeFl5E8DCuA_vHSL9TIuQ1rS9lIPw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://lsoftware.com.co:8080/lavadero/api/usuario",
+							"protocol": "http",
+							"host": [
+								"lsoftware",
+								"com",
+								"co"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://lsoftware.com.co:8080/lavadero/api/usuario/findByEmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUxNzEyMzExfQ.e2MAJ5x1vhNX3JVUvix-k-lffiL7YmEPmr54yWDdjVL7p5P0TU2o7ZI_5GNNWOMH1b7Y_3npe4csS1vEJUK7qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "themakers@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://lsoftware.com.co:8080/lavadero/usuario/findByEmail",
+							"protocol": "http",
+							"host": [
+								"lsoftware",
+								"com",
+								"co"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario",
+								"findByEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUxODIwMzU3fQ.xvFPclUug7OVtVJrOalc7hIV9QCAPoVH9YMn-AL-akP95M_RywOkQ-ipmSaaTcRnbdfG4uSsgO7N8oVvusrNTw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								},
+								{
+									"key": "usuario",
+									"value": "{\n\t\"nombre1\": \"Pepe\",\n\t\"nombre2\": \"\",\n\t\"apellido1\": \"Trujillo\",\n\t\"apellido2\": \"Jr\",\n\t\"tipoIdentificacion\":{\n\t\t\"codigo\": 1\n\t},\n\t\"identificacion\": \"1022321232\",\n\t\"direccion\": \"Cra 42 N 23-23\",\n\t\"telefono\": \"31214141223\",\n\t\"email\": \"robert@gmail.com\",\n\t\"roles\": [\n\t\t{\"codigo\": 1},\n\t\t{\"codigo\": 2}\n\t]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/usuario/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUxMjI0NDg0fQ.bmuRRztdJ4bkL3Lza04ETTmhORfNagesxdqSH-LZ8648bkFdYWnnMN0ifA7rqM0I_mi7ZJamid1J3Ss2WA2Dkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/usuario/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/usuario/disponibles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUyMDA0ODM1fQ.IzQbVxWVWewz9nSG5qaAHjNTwtTFu0kMn_k4HhdN5vhTsYLzv7zTgdcZZBZJteMeSxfubKZK8Mz6Pkdq7eUM_w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/usuario/disponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario",
+								"disponibles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUyNTg1NDg5fQ.j60QmEa-bSwMB6XKPUaLHqDHbq5vtvfU3yCgB8FRFACTCHa73ovdg3ac3G2_0r0AT-_diIipS4D9zYSMjbg5qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/usuario/tecnicos/disponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario",
+								"tecnicos",
+								"disponibles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/usuario/cliente/105284064",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUyNjY2MTU0fQ.UHxczyyNqNbI6fpiiumT4JhC6uCiKEGGn2a0_Kyg3pAa3A-KVxD8CRJq-2tSOos5UlFQgQ-IPqKQTpJ6hjXtsg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/usuario/cliente/105284064",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario",
+								"cliente",
+								"105284064"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/usuario/cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUyNjY2MTU0fQ.UHxczyyNqNbI6fpiiumT4JhC6uCiKEGGn2a0_Kyg3pAa3A-KVxD8CRJq-2tSOos5UlFQgQ-IPqKQTpJ6hjXtsg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nombre1\": \"Cliente\",\r\n\t\"nombre2\": \"\",\r\n\t\"apellido1\": \"Ejemplo 1\",\r\n\t\"apellido2\": \"\",\r\n\t\"tipoIdentificacion\":{\r\n\t\t\"codigo\": 1\r\n\t},\r\n\t\"identificacion\": \"33333333\",\r\n\t\"direccion\": \"Cra 42 N 23-23\",\r\n\t\"telefono\": \"32064628291\",\r\n\t\"email\": \"cliente1@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/usuario/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"usuario",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipos-liquidacion",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/tipoLiquidacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwODgxNzk0fQ.10bAFwPVLSOCwGj5JroHVm1sjHXp-6qJLbQ7I0FaANaxJeMiPDQPfbQtQ2YwaMG9xSyxbhsD7_wJUMqTPxmGlg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Ejemplo 1\",\n\t\"descripcion\": \"Descripcion\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoLiquidacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoLiquidacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/tipoLiquidacion/estado/10",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwODgxNzk0fQ.10bAFwPVLSOCwGj5JroHVm1sjHXp-6qJLbQ7I0FaANaxJeMiPDQPfbQtQ2YwaMG9xSyxbhsD7_wJUMqTPxmGlg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoLiquidacion/estado/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoLiquidacion",
+								"estado",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/tipoLiquidacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTMwOTE5fQ.mWVLP_MayLdbgzrKl1HHQPmuZHomCz0tZAQR1LryX2TFHvatLtQnApbSmTXut-JT3nDXTymaZL0vbD19Un1Huw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoLiquidacion/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoLiquidacion",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/tipoLiquidacion/disponibles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUyNTg1NDg5fQ.j60QmEa-bSwMB6XKPUaLHqDHbq5vtvfU3yCgB8FRFACTCHa73ovdg3ac3G2_0r0AT-_diIipS4D9zYSMjbg5qw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoLiquidacion/disponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoLiquidacion",
+								"disponibles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipos-vehiculos",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/tipoVehiculo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTQwMjYzfQ.M2LYgIf9VkhTcoPtGSjItWQYHCJ9SrKEJg3QnllKWs26CxuYuwNON0lkp4Lrgq55tTB7aVQ7Wy-hbF30Xc_ecA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Ejemplo 1\",\n\t\"descripcion\": \"Descripcion\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoVehiculo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoVehiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/tipoVehiculo/estado/4",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTQwMjYzfQ.M2LYgIf9VkhTcoPtGSjItWQYHCJ9SrKEJg3QnllKWs26CxuYuwNON0lkp4Lrgq55tTB7aVQ7Wy-hbF30Xc_ecA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoVehiculo/estado/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoVehiculo",
+								"estado",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/tipoVehiculo/5",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTQwMjYzfQ.M2LYgIf9VkhTcoPtGSjItWQYHCJ9SrKEJg3QnllKWs26CxuYuwNON0lkp4Lrgq55tTB7aVQ7Wy-hbF30Xc_ecA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoVehiculo/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoVehiculo",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "marcas",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/marca",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTQ3Mzc1fQ.0Wm4CHWcDjBGkFPO0-wFprL4fT22kt4Q1l7iKbrRSmVSruT0h3BHAd15VgQWDPAOihDGcaMMvFXSMsrx6UJi7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Ejemplo 1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/marca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"marca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/marca",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTQ3Mzc1fQ.0Wm4CHWcDjBGkFPO0-wFprL4fT22kt4Q1l7iKbrRSmVSruT0h3BHAd15VgQWDPAOihDGcaMMvFXSMsrx6UJi7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/marca/estado/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"marca",
+								"estado",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/marca/7",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsbHVpc2xsYW5vc3NAZ21haWwuY29tIiwiZXhwIjoxNTUwOTQ3Mzc1fQ.0Wm4CHWcDjBGkFPO0-wFprL4fT22kt4Q1l7iKbrRSmVSruT0h3BHAd15VgQWDPAOihDGcaMMvFXSMsrx6UJi7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/marca/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"marca",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lavadero",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUxMTEwMzgzfQ.V-JWUZmTLU7pGZ3S8Sw2QsepPLLX7nOR37EvrBqaUxwzVc4crUvQfMD3sLpJqHKmtvQLClrFI47d88JTKaYA4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Ejemplo 1\", \n\t\"descripcion\": \"Descripcion\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/lavadero",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"lavadero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/lavadero/disponibles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUyMDA0ODM1fQ.IzQbVxWVWewz9nSG5qaAHjNTwtTFu0kMn_k4HhdN5vhTsYLzv7zTgdcZZBZJteMeSxfubKZK8Mz6Pkdq7eUM_w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/lavadero/disponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"lavadero",
+								"disponibles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/XUsuario/27",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb2JlcnRkb3duZXlAZ21haWwuY29tIiwiZXhwIjoxNTUyNTc3MzI2fQ.MptvIaCbYFerVKoLI1hCUcWt9WUq2d8eZAC-GnyDGk_ystsWoY_T71Vy7pLQxYQeJg_gxhNpYliivUvoLB8fbA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/lavadero/XUsuario/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"lavadero",
+								"XUsuario",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/orden/lavadero/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHJpc2V2YW5zcGV0ZXJzOTZAZ21haWwuY29tIiwiZXhwIjoxNTUzNjM4ODUxfQ.WMTxmSQUqAT7SkZ5PbaEOd6YrTFINr9ehB3sF8tyk7AL6LTzm5zc-aAenfjyV5JfetFcYH8DwO8kdOFUjaRlpg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/orden/lavadero/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"orden",
+								"lavadero",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "imagenes",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/imagen/usuario/1.png",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUzMTI2NDQ1fQ.LD7_SmqK0zeCAIYSRx0xTDAf-x6X0uFga_fXkOpKpzBEs6aa-p9lY8RbbB4Uj2lK2dof_6fQNrTQfl1yOV8ZZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://18.223.161.138:8080/lavadero/imagen/usuario/26.jpg",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"161",
+								"138"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"imagen",
+								"usuario",
+								"26.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/imagen/tipo-vehiculo/1.png",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNAZ21haWwuY29tIiwiZXhwIjoxNTUxMjI0NDg0fQ.bmuRRztdJ4bkL3Lza04ETTmhORfNagesxdqSH-LZ8648bkFdYWnnMN0ifA7rqM0I_mi7ZJamid1J3Ss2WA2Dkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/imagen/tipo-vehiculo/1.png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"imagen",
+								"tipo-vehiculo",
+								"1.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipos-identificacion",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/tipoIdentificacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUzMTI2NDQ1fQ.LD7_SmqK0zeCAIYSRx0xTDAf-x6X0uFga_fXkOpKpzBEs6aa-p9lY8RbbB4Uj2lK2dof_6fQNrTQfl1yOV8ZZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://18.223.161.138:8080/lavadero/tipoIdentificacion/disponibles",
+							"protocol": "http",
+							"host": [
+								"18",
+								"223",
+								"161",
+								"138"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoIdentificacion",
+								"disponibles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipo-promocion",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/tipoPromocion/disponibles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTUyNDA1MjU3fQ.vtSaP2XTjz8IQMxE-GQhbg6X90minCmzhtJNRiC9LNfNG1sduVW93-Zh1F5d9_N_nBkY7r76ZxsSJqV_ngSI1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoPromocion/disponibles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoPromocion",
+								"disponibles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ordenes",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/orden/datatable/lavadero/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHJpc2V2YW5zcGV0ZXJzOTZAZ21haWwuY29tIiwiZXhwIjoxNTUzMjE5ODAwfQ.pjkxocCBZcipxNgKx8343nx2FZ2KQqsqymTTFj7002YNf0wuBmymjAZ0lD1c0YsnBSLqftaC9nNywmb6f3QogQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/orden/lavadero/6/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"orden",
+								"lavadero",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipo-servicio",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/tipoServicio/disponibles/lavadero/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHJpc2V2YW5zcGV0ZXJzOTZAZ21haWwuY29tIiwiZXhwIjoxNTUzMjkwOTI3fQ.EEPpLQpwCh6aEtYJXkWibng-tMrE_eGKGvPdKU8Qhg7kokBp_heJloYOvkuJWb7QGouQS-4NOMO17904G0daQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/tipoServicio/disponibles/lavadero/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"tipoServicio",
+								"disponibles",
+								"lavadero",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "liquidacion-funcionario",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/liquidacionFuncionario/generarTicket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaHJpc2V2YW5zcGV0ZXJzOTZAZ21haWwuY29tIiwiZXhwIjoxNTUzODk2NTc3fQ.yXZr0Qum-a-OkGE49k2_uplM9Y7f18gb-Zp1hIRa69T0kai7Zr0ONVQkWwOFqCxthPRxl5imU6vvP29mhS--Yg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n   \"codigo\":null,\r\n   \"funcionarioServicio\":{  \r\n      \"codigo\":5,\r\n      \"usuario\":{  \r\n         \"codigo\":29,\r\n         \"email\":\"tecnico1@gmail.com\",\r\n         \"password\":\"$2a$10$GZPA8WfyltOlxf/sDaNUweDIJJuiqcV7EixNWyrs5SIGM5dlqRkPm\",\r\n         \"imagen\":\"29.jpg\",\r\n         \"estado\":1,\r\n         \"roles\":[  \r\n            {  \r\n               \"codigo\":5,\r\n               \"nombre\":\"ROLE_CLIENTE\",\r\n               \"estado\":1\r\n            },\r\n            {  \r\n               \"codigo\":4,\r\n               \"nombre\":\"ROLE_TECNICO\",\r\n               \"estado\":1\r\n            }\r\n         ],\r\n         \"nombre1\":\"Tecnico\",\r\n         \"nombre2\":\"Ejemplo m\",\r\n         \"apellido1\":\"Numero 1\",\r\n         \"apellido2\":null,\r\n         \"tipoIdentificacion\":{  \r\n            \"codigo\":1,\r\n            \"nombre\":\"CEDULA DE CIUDADANIA\",\r\n            \"acronimo\":\"CC\",\r\n            \"estado\":1\r\n         },\r\n         \"identificacion\":\"123456789\",\r\n         \"direccion\":\"Cra 42 N 23-23\",\r\n         \"telefono\":\"3212312312\"\r\n      },\r\n      \"tipoServicio\":{  \r\n         \"codigo\":8,\r\n         \"nombre\":\"Lavado General\",\r\n         \"descripcion\":\"Descripcion\",\r\n         \"imagen\":\"8.png\",\r\n         \"estado\":1\r\n      },\r\n      \"tipoLiquidacion\":{  \r\n         \"codigo\":13,\r\n         \"nombre\":\"Diaria\",\r\n         \"descripcion\":\"Descripcion de Diaria\",\r\n         \"estado\":1\r\n      },\r\n      \"fechaCreacion\":\"2019-03-18T23:19:12.123+0000\",\r\n      \"estado\":1,\r\n      \"tipoPago\":{  \r\n         \"codigo\":2,\r\n         \"nombre\":\"PORCENTAJE\",\r\n         \"descripcion\":\"El valor a pagar es un porcentaje definido por cada servicio\",\r\n         \"estado\":1\r\n      },\r\n      \"valorPago\":10\r\n   },\r\n   \"lavadero\":{  \r\n      \"codigo\":6,\r\n      \"nombre\":\"CarWash\",\r\n      \"descripcion\":\"Descripcion\",\r\n      \"fechaCreacion\":\"2019-03-08T23:43:47.543+0000\",\r\n      \"imagen\":\"6.jpg\",\r\n      \"estado\":1\r\n   },\r\n   \"fechaCreacion\":null,\r\n   \"fechaInicio\":\"2019-03-28T05:00:00.000+0000\",\r\n   \"fechaFin\":\"2019-03-29T04:59:00.000+0000\",\r\n   \"valorPago\":7500,\r\n   \"estado\":null\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/liquidacionFuncionario/generarTicket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"liquidacionFuncionario",
+								"generarTicket"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reportes",
+			"item": [
+				{
+					"name": "http://localhost:8080/lavadero/reportes/reporte1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTU0NDE5MzU1fQ.jAx3zVdZ8ZJskCWf9vA_nw2Mkk7wRG1VtcOqTlG5wrSFIOmXeqDFpiwf3iuV8GYOvfDl1_DW0SB_ZPihqJosOg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/reportes/reporte2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"reportes",
+								"reporte2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/reportes/admin/reporte1/informacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTU0NzM2NDc5fQ.D9VKHjefHVCpw_eeno-l03UG-cRYQn1n1IdYLeOmVy2ZeYSGrNJ8e6SOjiVBxkN-zApoNwbhJ1vdAdTCZQU2xQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/reportes/admin/reporte1/informacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"reportes",
+								"admin",
+								"reporte1",
+								"informacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/reportes/admin/reporte4/informacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTU0NzQ0NDEyfQ.CC6h45hBzM_5O7nOCNr1QNK7cEDTGG_qjqLLDkGGwlLYzJMa2_LS4b7WpvHGNwWdWU2U_aE5KHrunGMyeAM-Og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fechaHoraInicioStr",
+									"value": "2019-03-29 00:00:00.421\n",
+									"type": "text"
+								},
+								{
+									"key": "fechaHoraFinStr",
+									"value": "2019-03-29 23:59:59.421",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/reportes/admin/reporte4/informacion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"reportes",
+								"admin",
+								"reporte4",
+								"informacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/reportes/admin/reporte4/informacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTU0NzYwMzA3fQ.00KrezzL-qxt8hvrUu6v26do7PjMcNdf3USATzg15j_2nCMTn_P4OdL4FUssvh1eknrqj8bPsps9Ybs00Q4BLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fechaHoraInicio",
+									"value": "2019-03-29 00:00:00.421",
+									"type": "text"
+								},
+								{
+									"key": "fechaHoraFin",
+									"value": "2019-03-29 23:59:59.421",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/reportes/admin/reporte4/generar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"reportes",
+								"admin",
+								"reporte4",
+								"generar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/reportes/propietario/reporte1/informacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb2JlcnRkb3duZXlAZ21haWwuY29tIiwiZXhwIjoxNTU0OTI4MjcxfQ.XQFF497ldYDBH8rERnS2ww5fGBGsE8hIa5luYSu9vW_uatlYbl0nkOTcvzhmirx1hZsvuPf4S2ek-nMqQT_VJQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fechaHoraInicio",
+									"value": "2019-04-10 00:00:00.421",
+									"type": "text"
+								},
+								{
+									"key": "fechaHoraFin",
+									"value": "2019-04-10 23:59:59.421",
+									"type": "text"
+								},
+								{
+									"key": "lavaderoCodigo",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/reportes/propietario/reporte4/generar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"reportes",
+								"propietario",
+								"reporte4",
+								"generar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/lavadero/reportes/admin/reporte2/informacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGVtYWtlcnNicmlsbGFudHlAZ21haWwuY29tIiwiZXhwIjoxNTU0ODM5NzMwfQ.dD1GNyY9duaJYkqFIo1ea86_0DI1DEe0Usr8iishcexPfiJMwwTCbZ95Y_df5QtRWBuGA0Brdj_YOma3m21brg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "fechaHoraInicio",
+									"value": "2019-03-29 00:00:00.421",
+									"type": "text"
+								},
+								{
+									"key": "fechaHoraFin",
+									"value": "2019-03-29 23:59:59.421",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lavadero/reportes/admin/reporte2/generar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lavadero",
+								"reportes",
+								"admin",
+								"reporte2",
+								"generar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reportes",
+			"item": []
+		}
+	]
+}
