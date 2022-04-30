@@ -1,6 +1,6 @@
 
 @echo ================================================================
-@echo Iniciando Compilacion Maven para proyecto Automas AVE3 de TICXAR
+@echo Iniciando Compilacion Maven para proyecto
 @echo ================================================================
 
 call mvn clean install -DskipTests
